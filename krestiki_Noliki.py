@@ -68,3 +68,4 @@ while True:
     tabl()
     if chet("O") == True:
         break
+
