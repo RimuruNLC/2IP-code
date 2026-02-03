@@ -1,0 +1,22 @@
+str_vush="\"Не верю77! ск431аза7л\" - К. Стани57славский"
+list_vush = list(str_vush)
+x = 0
+list_final = []
+list_final1 = []
+for i in list_vush:
+    if i.isdigit():
+        x += int(i)
+    else:
+        list_final.append(i)
+list_final.append(f" {str(x)}")
+object1 = list_final.pop(16)
+object2 = list_final.pop(list_final.index("-"))
+list_final.insert(9, object1+" ")
+list_final.insert(10, object2)
+for i in range(len(list_final)):
+    if i < 8:
+        if list_final[i].isalpha():
+            list_final.insert(i, list_final[i].upper())
+            list_final.pop(i+1)
+str_final = "".join(list_final)
+print(str_final)
