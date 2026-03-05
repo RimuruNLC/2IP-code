@@ -114,3 +114,12 @@ print("Тридцатый метод")
 print("np.flip(a) возращает перевернутый массив")
 a = np.arange(5)
 print(np.flip(a))
+
+
+
+print("Домашнее задание")
+massive = np.random.randint(0,10,(3,3))
+print(massive)
+print(np.sum(np.diag(massive[:,::-1])))
+
+
