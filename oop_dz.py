@@ -30,3 +30,19 @@ print(f"Средние величины. \nТемпература:{float(mean[0]
 list_uchenicov = ["Семаева", "Данилов","Денисов", "Паштынов", "Мешалкин", "Афоркин","Аня","Исправников"]
 dict1 = [f"{i + 1} {list_uchenicov.pop(random.randint(0,len(list_uchenicov)-1))} {list_uchenicov.pop(random.randint(0,len(list_uchenicov)-1))}" for i in range(len(list_uchenicov)//2)]
 print(dict1)
+import random
+list1 = []
+list_uchenicov = ["Александрова Ирина","Андреев Алексей","Андреева Екатерина","Антонов Данила","Афоркин Степан","Данилов Тимофей","Денисов Евгений","Иванова Анна","Исправников Михаил","Куксенков Сергей","Кучкасков Егор","Мажукова Елизавета","Малякова Анна","Мартынов Сергей","Михайлов Иван","Мешалкин Алексей","Николаев Александр","Никулин Кирилл","Паштынов Антон","Семаева Яна","Тихонов Вячеслав","Шипилевский Александр","Эрипова Эвелина","Яковлев Тимофей"]
+final_lict = [f"{list_uchenicov.pop(random.randint(0,len(list_uchenicov)-1))} ||| {list_uchenicov.pop(random.randint(0,len(list_uchenicov)-1))} за {i + 1} PC" for i in range(len(list_uchenicov)//2)]
+for i in final_lict:
+    print(i, end="\n")
+while True:
+    search = str(input("Поиск. Введите имя\n>"))
+    for i in range(len(final_lict)-1):
+        if final_lict[i].find(search) != -1:
+            list1.append(final_lict[i])
+    if len(list1) != 0:
+        for i in list1:
+            print(i, end="\n")
+    else:
+        print("Данных учеников не существует, либо вы неправильно их записали")
