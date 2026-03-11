@@ -27,3 +27,6 @@ mean = list(tablica.mean(axis=1))
 print(f"Максимальные величины. \nТемпература:{int(max[0])} градусов по цельсию\nВлажность: {int(max[1])}%\nСнежный покров: {int(max[2])} см\nСкорость ветра: {int(max[3])} м/с\nАтмосферное давление: {int(max[4])} мм рт. ст\n")
 print(f"Минимальные величины. \nТемпература:{int(min[0])} градусов по цельсию\nВлажность: {int(min[1])}%\nСнежный покров: {int(min[2])} см\nСкорость ветра: {int(min[3])} м/с\nАтмосферное давление: {int(min[4])} мм рт. ст\n")
 print(f"Средние величины. \nТемпература:{float(mean[0])} градусов по цельсию\nВлажность: {float(mean[1])}%\nСнежный покров: {float(mean[2])} см\nСкорость ветра: {float(mean[3])} м/с\nАтмосферное давление: {float(mean[4])} мм рт. ст\n")
+list_uchenicov = ["Семаева", "Данилов","Денисов", "Паштынов", "Мешалкин", "Афоркин","Аня","Исправников"]
+dict1 = [f"{i + 1} {list_uchenicov.pop(random.randint(0,len(list_uchenicov)-1))} {list_uchenicov.pop(random.randint(0,len(list_uchenicov)-1))}" for i in range(len(list_uchenicov)//2)]
+print(dict1)
