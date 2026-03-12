@@ -46,3 +46,10 @@ while True:
             print(i, end="\n")
     else:
         print("Данных учеников не существует, либо вы неправильно их записали")
+
+
+
+
+
+list1 = [[i if i%2 == 0 else 0 for i in random.sample([random.randint(0,100) for _ in range(3)], 3)] for i in range(3)]
+print(list1)
