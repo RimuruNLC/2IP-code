@@ -1,0 +1,85 @@
+def nomer1full(chislo):
+    def desatto3(a):
+        str_final = ""
+        int10 = a
+        while int10 != 0:
+            str_final += str(int10%3)
+            int10//=3
+        return str_final[::-1]
+    s = desatto3(chislo)
+    a = chislo%3
+    if a != 0:
+        a*=5
+        b = desatto3(a)
+        s+=b
+    list1 = list(s)
+    list1.reverse()
+    x = 0
+    int_final = 0
+    for i in list1:
+        int_final += (int(i) * 3 ** x)
+        x += 1
+    return int_final
+def nomer2full(chislo):
+    def desatto2(a):
+        str_final = ""
+        int10 = a
+        while int10 != 0:
+            str_final += str(int10%2)
+            int10//=2
+        return str_final[::-1]
+
+    def nomer2(a):
+        s = list(desatto2(a))
+        s1 = []
+        for i in s:
+            if i == "1":
+                s1.append("0")
+            else:
+                s1.append("1")
+        while s1[0] == 0:
+            s1.pop(0)
+        s = s1
+        s.reverse()
+        final = 0
+        for i in range(len(s)):
+            final += int(s[i])*2**i
+
+        return a-final
+    return nomer2(chislo)
+
+def nomer3full(chislo):
+    def desatto2(a):
+        str_final = ""
+        int10 = a
+        while int10 != 0:
+            str_final += str(int10%2)
+            int10//=2
+        return str_final[::-1]
+    #Задание 3
+    def nomer3(a):
+        s = list(desatto2(a))
+        for i in range(2):
+            sum1 = 0
+            for j in s:
+                sum1 += int(j)
+            s.append(str(sum1%2))
+        s.reverse()
+        final = 0
+        for i in range(len(s)):
+            final += int(s[i])*2**i
+        return final
+    return nomer3(chislo)
+
+# for i in range(1,10000):
+#     if nomer2full(i)==999:
+#         print(nomer2full(i), i)
+#         break
+# for i in range(50,0,-1):
+#     if nomer3full(i) < 100:
+#         print(nomer3full(i))
+#         break
+for i in range(1,100):
+    if nomer1full(i) > 146:
+        print(nomer1full(i),i)
+        break
